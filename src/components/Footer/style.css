@@ -1,0 +1,35 @@
+/* Footer */
+/* --------------------------------------- */
+.footer {
+    flex-shrink: 0;
+    height: 70px;
+    background-color: #f3ecdc;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+}
+
+.social-icons {
+    display: inline-flex;
+    list-style: none;
+    margin-top: 20px;
+    line-height: 40px;
+}
+
+.social-icons li {
+    margin-left: 20px;
+}
+
+.fa {
+    font-size: 25px;
+    color: black
+}
+
+.fa-linkedin:hover {
+    color: #007bb6;
+}
+
+.fa-user:hover {
+    color: #358923;
+}
