@@ -7,11 +7,16 @@ const currentWeatherFactory = function () {
     const appId = '&appid=' + apiKey;
 
     async function getCurrentWeatherDataByCity(requestedCity) {
-        requestedCity = 'Chula Vista';
-        const requestUrl = weatherRequestUrl + requestedCity + appId
+        console.log('Inside getCurrentWeatherDataByCity()');
+        requestedCity = 'Calexico';
+        const requestUrl = weatherRequestUrl + requestedCity + appId;
         const response = await fetch(requestUrl, {mode: 'cors'});
+        // console.log('What is response::');
+        // console.table(response);
         const weatherData = await response.json();
+        // console.log('What is weatherData');
         console.table(weatherData);
+        return weatherData;
     }
 
     return {
