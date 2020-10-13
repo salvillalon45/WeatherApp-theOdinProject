@@ -2,7 +2,8 @@
 
 <template>
   <div id="app">
-    <current-weather-component></current-weather-component>
+    <nav-bar-component></nav-bar-component>
+    <weather-layout-component></weather-layout-component>
     <footer-component></footer-component>
   </div>
 </template>

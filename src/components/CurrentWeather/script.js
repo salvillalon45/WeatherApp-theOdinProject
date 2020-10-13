@@ -1,37 +1,33 @@
 import currentWeatherFactory from '../../util/CurrentWeather';
-// import fiveDayForecastFactory from '../../util/FiveDayForecast';
 const currentWeather = currentWeatherFactory();
-// const fiveDayForecast = fiveDayForecastFactory();
-
-async function callCurrentWeatherApi() {
-  // const currentWeatherData = await currentWeather.getCurrentWeatherDataByCity().then((result) => {
-  //   console.log('What is result');
-  //   console.table(result);
-  //   return result;
-  // });
-  const currentWeatherData = await currentWeather.getCurrentWeatherDataByCity();
-
-  console.log('Checking for currentWeatherData in script.js')
-  console.table(currentWeatherData);
-  const cityName = currentWeatherData.name;
-  // const weather = currentWeatherData.weather;
-
-  console.log('What is cityName:: ' + cityName);
-  return currentWeatherData;
-}
-
-const currentWeatherData = callCurrentWeatherApi().then(result => {
-  console.log('What is result');
-  console.table(result);
-  console.log(result.name)
-  return result;
-});
 
 export default {
   name: 'CurrentWeather',
   data() {
     return {
-      cityName: currentWeatherData.name
+        responseAvailable: false,
+        cityName: '',
+        currentWeatherData: '',
+        currentDay: '',
+        currentTime: '',
+        weatherDescription: '',
+        weatherIcon: '',
+        humidity: '',
+        wind: '',
+        precipitation: '',
     };
   },
+  methods: {
+    async submitForm(requestedCity) {
+        this.currentWeatherData = await currentWeather.processCurrentWeatherData(requestedCity);
+        this.responseAvailable = true;
+        this.currentDay = currentWeather.getDayOfWeek();
+        this.currentTime = currentWeather.getCurrentTime();
+        this.weatherDescription = currentWeather.toUpper(this.currentWeatherData.weather[0].description);
+        this.weatherIcon = currentWeather.getWeatherIcon(this.currentWeatherData.weather[0].description);
+        this.humidity = this.currentWeatherData.main.humidity;
+        this.wind = this.currentWeatherData.wind.speed;
+        this.precipitation = this.currentWeatherData.precipitation !== undefined ? this.currentWeatherData.precipitation.value : 'N/A';
+    }
+  }
 };
