@@ -20,12 +20,15 @@ export default {
   methods: {
     async submitForm(requestedCity) {
         this.currentWeatherData = await currentWeather.processCurrentWeatherData(requestedCity);
-        this.responseAvailable = true;
+        console.log('What is .currentWeatherData');
+        console.log(this.currentWeatherData);
+        this.responseAvailable = this.currentWeatherData !== 1;
         this.currentDay = currentWeather.getDayOfWeek();
         this.currentTime = currentWeather.getCurrentTime();
         this.weatherDescription = currentWeather.toUpper(this.currentWeatherData.weather[0].description);
         this.weatherIcon = currentWeather.getWeatherIcon(this.currentWeatherData.weather[0].description);
         this.humidity = this.currentWeatherData.main.humidity;
+        this.tempature = currentWeather.getTemperature(this.currentWeatherData.main.temp);
         this.wind = this.currentWeatherData.wind.speed;
         this.precipitation = this.currentWeatherData.precipitation !== undefined ? this.currentWeatherData.precipitation.value : 'N/A';
     }

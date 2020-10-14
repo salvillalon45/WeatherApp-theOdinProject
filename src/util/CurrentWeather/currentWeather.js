@@ -1,7 +1,7 @@
 import apiKey from "../../../variables";
 import ClearSky from '../../assets/day/01d.png';
 import FewClouds from '../../assets/day/02d@2x.png';
-import ScatteredClouds from '../../assets/day/03d@2x.png';
+import ScatteredClouds from '../../assets/night/03n@2x.png';
 import BrokenClouds from '../../assets/day/04d@2x.png';
 import ShowerRain from '../../assets/day/09d@2x.png';
 import Rain from '../../assets/day/10d@2x.png';
@@ -32,7 +32,21 @@ const currentWeatherFactory = function () {
         const currentWeatherData = await getCurrentWeatherDataByCity(requestedCity);
         console.table(currentWeatherData);
         console.log({currentWeatherData})
-        return currentWeatherData;
+
+        if (currentWeatherData.cod === "404") {
+            // window.alert("City Not Found");
+            console.log("City Not Found");
+            return 1;
+        } else {
+            return currentWeatherData;
+        }
+    }
+
+    function getTemperature(kelvinTemperature) {
+        const fahrenheit = Math.trunc((9/5) * (kelvinTemperature - 273.15) + 32);
+        const celsius = Math.trunc(kelvinTemperature - 273.15);
+
+        return [fahrenheit, celsius];
     }
 
     function getDayOfWeek() {
@@ -82,6 +96,7 @@ const currentWeatherFactory = function () {
             return FewClouds;
         }
         else if (weatherDescription === 'scattered clouds') {
+            console.log('There is scattered cloud');
             return ScatteredClouds;
         }
         else if (weatherDescription === 'broken clouds') {
@@ -110,6 +125,7 @@ const currentWeatherFactory = function () {
         getCurrentTime,
         toUpper,
         getWeatherIcon,
+        getTemperature
     }
 }
 

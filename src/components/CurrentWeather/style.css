@@ -1,8 +1,25 @@
-// SearchCityContainer Styling
-// -------------------------------------------
 .searchCityContainer {
   display: flex;
   justify-content: center;
+  margin-top: 50px;
+  text-align: center;
+}
 
+.form-control.weatherInput {
+  width: 400px;
+}
 
+.cityInfoContainer {
+  text-align: center;
+  padding-top: 59px;
+}
+
+.weatherDataContainer {
+  text-align: center;
+  padding-top: 28px;
+  padding-bottom: 21px;
+  background-color: rgba(0,0,0,0.5);;
+  margin-bottom: 91px;
+  margin-top: 61px;
+  border-radius: 20px;
 }

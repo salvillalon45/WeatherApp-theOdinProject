@@ -1,4 +1,9 @@
-<!-- src/App/index.vue -->
+<!--
+-------------------------------------------------
+App Component: index.vue
+Desc: Holds all the components for the application
+-------------------------------------------------
+-->
 
 <template>
   <div id="app">

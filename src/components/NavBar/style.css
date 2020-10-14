@@ -1,1 +1,11 @@
+.weatherNavigation {
+    background-color: #1C2143;
+}
 
+.weatherNavigation a, .nav-link.weatherNavigationMenuLink {
+    color: white !important;
+}
+
+.weatherNavigationButton {
+    color: white
+}

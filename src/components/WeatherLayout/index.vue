@@ -1,8 +1,12 @@
-<!-- src/App/index.vue -->
+<!--
+-------------------------------------------------
+WeatherLayout Component: index.vue
+Desc: Holds the components that will be changing
+-------------------------------------------------
+-->
 
 <template>
     <div id="app">
-<!--        <search-city-component></search-city-component>-->
         <current-weather-component></current-weather-component>
     </div>
 </template>

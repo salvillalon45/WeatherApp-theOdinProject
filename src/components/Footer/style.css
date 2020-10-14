@@ -3,11 +3,11 @@
 .footer {
     flex-shrink: 0;
     height: 70px;
-    background-color: #f3ecdc;
+    background-color: #1C2143;
     width: 100%;
     margin: 0 auto;
-    font-family: 'Work Sans', sans-serif;
     font-weight: 500;
+    color: white;
 }
 
 .social-icons {
@@ -23,7 +23,7 @@
 
 .fa {
     font-size: 25px;
-    color: black
+    color: white;
 }
 
 .fa-linkedin:hover {

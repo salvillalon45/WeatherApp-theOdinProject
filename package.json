@@ -1,19 +1,20 @@
 {
-  "name": "theOdinProject-WeatherApp",
+  "name": "the-odin-project-weather-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "boostrap": "^2.0.0",
     "bootstrap": "^4.5.2",
-    "core-js": "^3.6.5",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "core-js": "^3.6.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -23,7 +24,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "less": "^3.12.2",
-    "less-loader": "^7.0.1",
+    "less-loader": "^7.0.2",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

@@ -1,4 +1,9 @@
-<!-- src/Footer/index.vue -->
+<!--
+-------------------------------------------------
+Footer Component: index.vue
+Desc: Footer for the application
+-------------------------------------------------
+-->
 
 <template>
     <footer class="footer">
