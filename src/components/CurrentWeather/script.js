@@ -18,10 +18,9 @@ export default {
     };
   },
   methods: {
+      // This function is called everytime the user hits the submit button
     async submitForm(requestedCity) {
         this.currentWeatherData = await currentWeather.processCurrentWeatherData(requestedCity);
-        console.log('What is .currentWeatherData');
-        console.log(this.currentWeatherData);
         this.responseAvailable = this.currentWeatherData !== 1;
         this.currentDay = currentWeather.getDayOfWeek();
         this.currentTime = currentWeather.getCurrentTime();

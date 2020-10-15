@@ -19,8 +19,6 @@ const currentWeatherFactory = function () {
 
 
     async function getCurrentWeatherDataByCity(requestedCity) {
-        console.log('Inside getCurrentWeatherDataByCity()');
-
         const requestUrl = weatherRequestUrl + requestedCity + appId;
         const response = await fetch(requestUrl, { mode: 'cors' });
         const weatherData = await response.json();
@@ -30,17 +28,14 @@ const currentWeatherFactory = function () {
 
     async function processCurrentWeatherData(requestedCity) {
         const currentWeatherData = await getCurrentWeatherDataByCity(requestedCity);
-        console.table(currentWeatherData);
-        console.log({currentWeatherData})
 
         if (currentWeatherData.cod === "404") {
-            // window.alert("City Not Found");
-            console.log("City Not Found");
             return 1;
         } else {
             return currentWeatherData;
         }
     }
+
 
     function getTemperature(kelvinTemperature) {
         const fahrenheit = Math.trunc((9/5) * (kelvinTemperature - 273.15) + 32);
@@ -49,11 +44,13 @@ const currentWeatherFactory = function () {
         return [fahrenheit, celsius];
     }
 
+
     function getDayOfWeek() {
         const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         const dayIndex = new Date().getDay();
         return days[dayIndex];
     }
+
 
     function getCurrentTime() {
         const today = new Date();
@@ -75,6 +72,7 @@ const currentWeatherFactory = function () {
         return hours + ':' + minutes + ' ' + newFormat;
     }
 
+
     function toUpper(str) {
         return str
             .toLowerCase()
@@ -85,10 +83,8 @@ const currentWeatherFactory = function () {
             .join(' ');
     }
 
+
     function getWeatherIcon(weatherDescription) {
-        console.log('What is weatherDes:: ' + weatherDescription)
-
-
         if (weatherDescription === 'clear sky') {
             return ClearSky;
         }
@@ -96,7 +92,6 @@ const currentWeatherFactory = function () {
             return FewClouds;
         }
         else if (weatherDescription === 'scattered clouds') {
-            console.log('There is scattered cloud');
             return ScatteredClouds;
         }
         else if (weatherDescription === 'broken clouds') {
@@ -117,7 +112,11 @@ const currentWeatherFactory = function () {
         else if (weatherDescription === 'mist') {
             return Mist;
         }
+        else if (weatherDescription === 'overcast clouds') {
+            return ScatteredClouds;
+        }
     }
+
 
     return {
         processCurrentWeatherData,
