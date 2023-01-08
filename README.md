@@ -3,10 +3,8 @@
 
 # Summary
 Created a Weather App! Enter the city name and it will show the humidity, wind, Fahrenheit, Celsius, and the condition of the sky currently happening in the city
-
-Project Here: https://salvillalon45.github.io/theOdinProject-WeatherApp/
- 
-You can find more on the project here: [The Odin Project - Weather App](https://www.theodinproject.com/lessons/node-path-javascript-weather-app)
+- Project Task: [The Odin Project - Weather App](https://www.theodinproject.com/lessons/node-path-javascript-weather-app)
+- View Project: https://salvillalon45.github.io/theOdinProject-WeatherApp/
 
 ### Implementation 
 - Built using Vue.js. Used async/await to fetch data from the Open Weather Map API
