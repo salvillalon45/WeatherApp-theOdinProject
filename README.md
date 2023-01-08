@@ -1,24 +1,25 @@
-# the-odin-project-weather-app
+# Weather App
+[The Odin Project: Javascript] - Project: Weather App
 
-## Project setup
-```
-yarn install
-```
+# Summary
+Created a Weather App! Enter the city name and it will show the humidity, wind, Fahrenheit, Celsius, and the condition of the sky currently happening in the city
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+Project Here: https://salvillalon45.github.io/theOdinProject-WeatherApp/
+ 
+You can find more on the project here: [The Odin Project - Weather App](https://www.theodinproject.com/lessons/node-path-javascript-weather-app)
 
-### Compiles and minifies for production
-```
-yarn build
-```
+### Implementation 
+- Built using Vue.js. Used async/await to fetch data from the Open Weather Map API
+- Developed with JavaScript factory functions to organize code
 
-### Lints and fixes files
-```
-yarn lint
-```
+### Demo
+<img alt="Weather App Demo" src="./weather_app.gif" width="600" />
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 📗 Fonts used
+
+-   [Poppins](https://fonts.google.com/specimen/Poppins?query=Poppins)
+
+# Technologies:
+  - Vue.js
+  - Surge.sh
+  - JavaScript
